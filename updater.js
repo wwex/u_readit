@@ -46,7 +46,7 @@ exports.check = () => {
             })
 
             // Load progress HTML
-            progressWin.loadURL(`file://${__direname}/renderer/progress.html`)
+            progressWin.loadURL(`file://${__dirname}/renderer/progress.html`)
 
             // Handle win close
             progressWin.on('closed', () => {progressWin = null})
