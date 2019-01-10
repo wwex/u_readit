@@ -1,6 +1,6 @@
 {
   "name": "u_readit",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Master_electron_course",
   "main": "main.js",
   "scripts": {
@@ -8,27 +8,39 @@
     "build-mac": "electron-builder -m",
     "build-win": "electron-builder -w",
     "build-all": "electron-builder -mwl",
-    "make-cert": "electron-builder create-self-signed-cert -p Autoliv_CID"
+    "make-cert": "electron-builder create-self-signed-cert -p Autoliv_CID",
+    "publish": "electron-builder build -w -p onTagOrDraft"
   },
   "build": {
     "appId": "com.u_readit",
     "directories": {
       "buildResources": "."
     },
-    "mac" : {
+    "mac": {
+      "publish": [
+        "github"
+      ],
       "category": "public.app-category.productivity",
       "target": "dmg"
     },
     "win": {
+      "publish": [
+        "github"
+      ],
       "certificateFile": "private/wwo.pfx",
       "verifyUpdateCodeSignature": false,
       "publisherName": "Autoliv_CID"
     },
     "linux": {
+      "publish": [
+        "github"
+      ],
       "category": "Network"
     }
   },
   "dependencies": {
+    "electron-log": "^2.2.17",
+    "electron-updater": "^4.0.6",
     "jquery": "^3.3.1",
     "query-string": "^6.2.0"
   },
