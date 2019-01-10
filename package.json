@@ -1,0 +1,42 @@
+{
+  "name": "u_readit",
+  "version": "1.0.0",
+  "description": "Master_electron_course",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build-mac": "electron-builder -m",
+    "build-win": "electron-builder -w",
+    "build-all": "electron-builder -mwl",
+    "make-cert": "electron-builder create-self-signed-cert -p Autoliv_CID"
+  },
+  "build": {
+    "appId": "com.u_readit",
+    "directories": {
+      "buildResources": "."
+    },
+    "mac" : {
+      "category": "public.app-category.productivity",
+      "target": "dmg"
+    },
+    "win": {
+      "certificateFile": "private/wwo.pfx",
+      "verifyUpdateCodeSignature": false,
+      "publisherName": "Autoliv_CID"
+    },
+    "linux": {
+      "category": "Network"
+    }
+  },
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "query-string": "^6.2.0"
+  },
+  "devDependencies": {
+    "electron": "^4.0.1",
+    "electron-builder": "^20.38.4",
+    "electron-reload": "^1.4.0"
+  },
+  "author": "woj.wojciechowski",
+  "license": "MIT"
+}
