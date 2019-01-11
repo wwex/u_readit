@@ -24,7 +24,7 @@
 }
 
 .read-item.is-active {
-  background-color: #FAFAFA
+  background-color: rgb(189, 241, 196)
 }
 
 #loader {
